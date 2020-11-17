@@ -325,20 +325,30 @@ input::placeholder {
 @media (min-width: 768px) {
     .c-app {
         display: grid;
-        grid-template-columns: 260px auto;
-        grid-template-rows: 70px auto;
+        grid-template-columns: 260px 1fr;
+        grid-template-rows: auto 1fr;
         grid-gap: 0;
     }
 }
 
 /*
-    Component: Logo
+    Component: Logo container
     ---
-    Website main logo
+    Website logo container
 */
 
 .c-app__logo {
     background-color: var(--color-neutral-xxx-dark);
+    padding: var(--global-whitespace-lg) var(--global-whitespace-md);
+}
+
+.c-logo {
+    font-size: calc(var(--global-baseline) * 3);
+    line-height: calc(var(--global-baseline) * 4);
+    margin: 0;
+    color: var(--color-neutral-xxxx-light);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
