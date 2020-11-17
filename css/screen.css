@@ -362,6 +362,66 @@ input::placeholder {
     background-color: var(--color-neutral-xx-dark);
 }
 
+.c-main-nav {
+}
+
+.c-main-nav__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.c-main-nav__list-item {
+    margin-bottom: var(--global-baseline);
+    position: relative;
+}
+
+.c-main-nav__list-item--is-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-main-nav__list-item::before {
+    position: absolute;
+    content: "";
+    width: var(--global-baseline);
+    background-color: var(--color-purple);
+    height: 100%;
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+}
+
+.c-main-nav__list-item:hover::before {
+    opacity: 1;
+}
+
+.c-main-nav__list-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-main-nav__list-item--is-selected::before {
+    opacity: 1;
+}
+
+.c-main-nav__list-item__content {
+    padding: var(--global-whitespace-md) var(--global-whitespace-lg);
+    display: flex;
+    align-items: center;
+}
+
+.c-main-nav__list-item a {
+    color: var(--color-neutral-xxxx-light);
+    line-height: var(--global-whitespace-md);
+    text-decoration: none;
+}
+
+.c-main-nav__icon {
+    fill: var(--color-neutral);
+    width: calc(var(--global-baseline) * 3);
+    height: calc(var(--global-baseline) * 3);
+    margin: 0 var(--global-whitespace-xs) 0 0;
+}
+
 
 /*
     Component: Topbar
@@ -382,6 +442,7 @@ input::placeholder {
 
 .c-app__main {
     background-color: var(--color-neutral-xxx-light);
+    padding: var(--global-whitespace-xl) calc(var(--global-baseline) * 15) 0 calc(var(--global-baseline) * 15); /* 75px links rechts 30px boven */
 }
 
 
