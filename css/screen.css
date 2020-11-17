@@ -11,6 +11,7 @@
     --color-alpha-light: MEDIUMSLATEBLUE;
     --color-alpha: SLATEBLUE;
 
+    --color-neutral-xxxx-light: #ffffff;
     --color-neutral-xxx-light: #f0f0f7;
     --color-neutral-xx-light: #ebebf2;
     --color-neutral-x-light: #d7dae2;
@@ -20,6 +21,7 @@
     --color-neutral-x-dark: #4d4f5c;
     --color-neutral-xx-dark: #43425d;
     --color-neutral-xxx-dark: #3b3b53;
+    --color-neutral-xxxx-dark: #000000;
 
     --color-red: #ff6565;
     --color-green: #3cc480;
@@ -311,10 +313,67 @@ input::placeholder {
 \*------------------------------------*/
 
 /*
+    Component: App
+    ---
+    Website container
+*/
+
+.c-app {
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .c-app {
+        display: grid;
+        grid-template-columns: 260px auto;
+        grid-template-rows: 70px auto;
+        grid-gap: 0;
+    }
+}
+
+/*
     Component: Logo
     ---
     Website main logo
 */
+
+.c-app__logo {
+    background-color: var(--color-neutral-xxx-dark);
+}
+
+
+/*
+    Component: Sidebar
+    ---
+    Website sidebar
+*/
+
+.c-app__sidebar {
+    background-color: var(--color-neutral-xx-dark);
+}
+
+
+/*
+    Component: Topbar
+    ---
+    Website topbar
+*/
+
+.c-app__topbar {
+    background-color: var(--color-neutral-xxxx-light); /* white */
+}
+
+
+/*
+    Component: Main
+    ---
+    Website main content
+*/
+
+.c-app__main {
+    background-color: var(--color-neutral-xxx-light);
+}
+
 
 /*------------------------------------*\
 #UTILITIES
