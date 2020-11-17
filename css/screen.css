@@ -11,16 +11,37 @@
     --color-alpha-light: MEDIUMSLATEBLUE;
     --color-alpha: SLATEBLUE;
 
-    --color-neutral-light: LIGHTSLATEGRAY;
-    --color-neutral: SLATEGRAY;
-    --color-neutral-dark: DARKSLATEGRAY;
+    --color-neutral-xxx-light: #f0f0f7;
+    --color-neutral-xx-light: #ebebf2;
+    --color-neutral-x-light: #d7dae2;
+    --color-neutral-light: #bcbccb;
+    --color-neutral: #a5a4bf;
+    --color-neutral-dark: #808495;
+    --color-neutral-x-dark: #4d4f5c;
+    --color-neutral-xx-dark: #43425d;
+    --color-neutral-xxx-dark: #3b3b53;
+
+    --color-red: #ff6565;
+    --color-green: #3cc480;
+    --color-blue: #3b86ff;
+    --color-purple: #a3a0fb;
+    --color-cyan: #54d8ff;
 
     /* Shadows */
+
+    /* Whitespace */
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline); /* 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* 30px */
 
     /* border radius */
 
     /* transitions */
-    --transition-alpha: .1s;
+    --transition-alpha: 0.1s;
 }
 
 /*------------------------------------*\
@@ -34,14 +55,14 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: var(--color-neutral-dark);
+    font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
+    color: var(--color-neutral-xxx-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-neutral-xxx-light);
 }
 
 *,
@@ -59,13 +80,13 @@ html {
 
 ::-moz-selection {
     background: var(--color-alpha);
-    color: white;
+    color: var(--color-neutral-xxx-light);
     text-shadow: none;
 }
 
 ::selection {
     background: var(--color-alpha);
-    color: white;
+    color: var(--color-neutral-xxx-light);
     text-shadow: none;
 }
 
@@ -98,20 +119,20 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +140,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,12 +151,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace-md);
 }
 
 li ul,
@@ -372,7 +393,6 @@ input::placeholder {
 .u-max-width-none {
     max-width: none !important;
 }
-
 
 /*
     Utilities: align
