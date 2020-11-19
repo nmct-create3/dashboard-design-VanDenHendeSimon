@@ -324,15 +324,6 @@ input::placeholder {
     --c-app__topbar-height: calc(var(--global-baseline) * 14);
 }
 
-@media (min-width: 992px) {
-    .c-app {
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        grid-template-rows: var(--c-app__topbar-height) 1fr;
-        gap: 0;
-    }
-}
-
 /*
     Component: Logo container
     ---
@@ -341,7 +332,7 @@ input::placeholder {
 
 .c-app__logo {
     background-color: var(--color-neutral-xxx-dark);
-    padding: 0 var(--global-whitespace-lg);
+    padding: var(--global-whitespace-md) var(--global-whitespace-lg);
 
     display: flex;
     align-items: center;
@@ -363,6 +354,7 @@ input::placeholder {
 */
 
 .c-app__sidebar {
+    display: none;
     background-color: var(--color-neutral-xx-dark);
 }
 
@@ -412,6 +404,11 @@ input::placeholder {
     color: var(--color-neutral-xxxx-light);
 }
 
+.c-main-nav__link--selected {
+    transform: translateX(0);
+    background-color: var(--color-neutral-xxx-dark);
+}
+
 .c-main-nav__icon {
     fill: var(--color-neutral);
     width: calc(var(--global-baseline) * 3);
@@ -426,6 +423,8 @@ input::placeholder {
 */
 
 .c-app__topbar {
+    display: none;
+
     background-color: var(--color-neutral-xxxx-light); /* white */
     box-shadow: var(--global-shadow);
     position: relative; /* Higher on the stacking order => Shadow falls on the main section */
@@ -475,6 +474,25 @@ input::placeholder {
     height: calc(100vh - var(--c-app__topbar-height));
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+@media (min-width: 992px) {
+    .c-app {
+        display: grid;
+        /*
+            Elke spatie maakt een nieuwe kolom
+            1fr staat voor de beschikbare ruimte
+            1 FRACTION UNIT
+        */
+        grid-template-columns: 260px 1fr;
+        grid-template-rows: var(--c-app__topbar-height) 1fr;
+        gap: 0;
+    }
+
+    .c-app__topbar,
+    .c-app__sidebar {
+        display: block;
+    }
 }
 
 /* Component dashboard */
