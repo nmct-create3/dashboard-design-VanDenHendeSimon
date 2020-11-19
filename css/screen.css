@@ -341,7 +341,11 @@ input::placeholder {
 
 .c-app__logo {
     background-color: var(--color-neutral-xxx-dark);
-    padding: var(--global-whitespace-lg) var(--global-whitespace-md);
+    padding: 0 var(--global-whitespace-md);
+
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .c-logo {
