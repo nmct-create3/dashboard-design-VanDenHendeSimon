@@ -414,6 +414,7 @@ input::placeholder {
     width: calc(var(--global-baseline) * 3);
     height: calc(var(--global-baseline) * 3);
     margin: 0 var(--global-whitespace-xs) 0 0;
+    cursor: pointer;
 }
 
 /*
@@ -428,6 +429,51 @@ input::placeholder {
     background-color: var(--color-neutral-xxxx-light); /* white */
     box-shadow: var(--global-shadow);
     position: relative; /* Higher on the stacking order => Shadow falls on the main section */
+}
+
+.c-topbar__search-container {
+    display: flex;
+    align-items: center;
+}
+
+.c-topbar__options {
+    display: flex;
+    align-items: center;
+    gap: var(--global-whitespace-sm);
+}
+
+.c-topbar__options__icons {
+    display: flex;
+    align-items: center;
+    gap: var(--global-whitespace-xl);
+}
+
+.c-topbar__options__separator {
+    width: 2px;
+    height: var(--global-whitespace-lg);
+    background-color: var(--color-neutral-xx-light);
+}
+
+.c-topbar__options__user {
+    display: flex;
+    align-items: center;
+    gap: var(--global-whitespace-xs);
+}
+
+.c-user__name {
+    font-size: 1rem;
+}
+
+.c-user__dropdown-icon {
+    display: flex;
+    align-items: center;
+}
+
+.c-user__avatar {
+    width: calc(var(--global-baseline) * 8);
+    height: calc(var(--global-baseline) * 8);
+    border-radius: calc(var(--global-baseline) * 4);
+    background-color: var(--color-neutral-xx-light);
 }
 
 /*
@@ -492,6 +538,13 @@ input::placeholder {
     .c-app__topbar,
     .c-app__sidebar {
         display: block;
+    }
+
+    .c-app__topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--global-whitespace-md);
     }
 }
 
