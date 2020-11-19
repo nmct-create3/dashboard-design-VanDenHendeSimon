@@ -328,7 +328,7 @@ input::placeholder {
     .c-app {
         display: grid;
         grid-template-columns: 260px 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: var(--c-app__topbar-height) 1fr;
         grid-gap: 0;
     }
 }
@@ -447,11 +447,11 @@ input::placeholder {
 }
 
 /* 
-Scroll behaviour 1:
-Hier komt de main content effectief onder de topbar
-Maar de scrollbar zelf gaat tot de hele hoogte van het scherm
+    Scroll behaviour 1:
+    Hier komt de main content effectief onder de topbar
+    Maar de scrollbar zelf gaat tot de hele hoogte van het scherm
 
-Enkel cool als de topbar semi transparant is
+    Enkel cool als de topbar semi transparant is
 */
 
 /*
@@ -470,8 +470,8 @@ Enkel cool als de topbar semi transparant is
 */
 
 /*
-Scroll behavior
-voelt beetje als een app
+    Scroll behavior 2:
+    voelt beetje als een app
 */
 
 .c-app__sidebar,
