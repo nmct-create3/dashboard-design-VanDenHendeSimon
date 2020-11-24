@@ -387,7 +387,7 @@ input::placeholder {
     border-left: var(--global-baseline) solid var(--color-alpha);
     transform: translateX(calc(var(--global-baseline) * -1));
     width: calc(100% + var(--global-baseline));
-    
+
     /* trager als je hover verlaat */
     transition: transform 0.5s ease;
 }
@@ -395,7 +395,7 @@ input::placeholder {
 .c-main-nav__link:hover {
     transform: translateX(0);
     background-color: var(--color-neutral-xxx-dark);
-    
+
     /* rapper wanneer je erover hovert */
     transition-duration: 0.1s;
 }
@@ -552,9 +552,8 @@ input::placeholder {
 
 .c-dashboard {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, auto);
     grid-gap: var(--global-whitespace-xl); /* 30px */
+    margin-bottom: var(--global-whitespace-md);
 }
 
 .c-dashboard__item {
@@ -562,12 +561,24 @@ input::placeholder {
     box-shadow: var(--global-shadow);
     padding: var(--global-whitespace-md);
     border-radius: calc(var(--global-baseline) * 1.5);
-
-    grid-column: span 12;
 }
 
 .c-dashboard__item p {
     margin: 0;
+}
+
+@media (min-width: 992px) {
+    .c-dashboard {
+        grid-template-columns: repeat(12, 1fr);
+        /* rows hoef je niet in te stellen, die krijgen hun hoogte dynamisch */
+    }
+
+    .c-dashboard__item {
+        /* Default = Volledige breedte */
+        /* grid-column: span 12; */
+        /* 1 tot -1 => van begin tot eind, los van het aantal kolommen */
+        grid-column: 1 / -1;
+    }
 }
 
 /*------------------------------------*\
@@ -580,20 +591,35 @@ input::placeholder {
     Utility classes to define span
 */
 
-.u-span-h-1-2 {
-    grid-column: span 6;
+/*
+    x-as ( horizontaal )
+*/
+
+@media (min-width: 992px) {
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+    
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+    
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+    
 }
 
-.u-span-h-1-3 {
-    grid-column: span 4;
-}
+/*
+    y-as ( verticaal )
+*/
 
-.u-span-h-2-3 {
-    grid-column: span 8;
-}
-
-.u-span-v-2 {
-    grid-row: span 2;
+@media (min-width: 992px) {
+    
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
 }
 
 /*
