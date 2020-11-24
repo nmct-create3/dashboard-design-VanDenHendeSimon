@@ -86,6 +86,8 @@
 
     /* transitions */
     --transition-alpha: 0.1s;
+
+    --pi: 3.14159265359
 }
 
 /*------------------------------------*\
@@ -633,6 +635,33 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.c-card__custom-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-custom-chart {
+    width: 15rem;
+    height: 15rem;
+    transform-origin: center;
+}
+
+.c-custom-chart__circle {
+    transform-origin: center;
+    stroke: var(--color-neutral-xx-light);
+    stroke-width: 4.2;
+    fill: none;
+}
+
+.c-custom-chart__circle--filled {
+    --percent: 30;
+
+    stroke: var(--color-purple);
+    stroke-dasharray: var(--percent) calc(100 - var(--percent));
+    transform: rotate(-90deg);
 }
 
 /*
