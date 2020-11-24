@@ -95,7 +95,9 @@
                     <div class="c-topbar__options__separator"></div>
                     <div class="c-topbar__options__user">
                         <div class="c-user__name">John Doe</div>
-                        <div class="c-user__dropdown-icon"><svg class="c-main-nav__icon"><use xlink:href="#c-icon_dropdown" /></svg></div>
+                        <div class="c-user__dropdown-icon">
+                            <svg class="c-main-nav__icon"><use xlink:href="#c-icon_dropdown" /></svg>
+                        </div>
                         <div class="c-user__avatar"></div>
                     </div>
                 </div>
@@ -160,12 +162,53 @@
                 <h2>Overview</h2>
                 <div class="c-dashboard">
                     <!-- Default = Volledige breedte -->
-                    <div class="c-dashboard__item"><p>Grid item 1</p></div>
+                    <div class="c-dashboard__item">
+                        <div class="c-card">
+                            <div class="c-card__header">
+                                <p class="c-card__title">Bezoekers per dag</p>
+                                <div class="c-card__dropdown">
+                                    <p class="c-form-field">
+                                        <label class="c-label" for="select-day"></label>
+                                        <span class="c-custom-select">
+                                            <select class="c-input c-custom-select__input" name="select-day" id="select-day">
+                                                <option value="maandag">Maandag</option>
+                                                <option value="dinsdag">Dinsdag</option>
+                                                <option value="woensdag">Woensdag</option>
+                                                <option value="donderdag">Donderdag</option>
+                                                <option value="vrijdag">Vrijdag</option>
+                                                <option value="zaterdag">Zaterdag</option>
+                                                <option value="zondag">Zondag</option>
+                                            </select>
+                                            <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7">
+                                                <defs>
+                                                    <style>
+                                                        .cls-1 {
+                                                            fill: #a4afb7;
+                                                        }
+                                                    </style>
+                                                </defs>
+                                                <path id="Path_26" data-name="Path 26" class="cls-1" d="M8.1,11.6,2.6,6.041,4.026,4.6,8.1,8.718,12.174,4.6,13.6,6.041Z" transform="translate(-2.6 -4.6)" />
+                                            </svg>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="c-card__body">
+                                <div class="c-card__chart"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="c-dashboard__item u-x-span-6-bp3"><p>Grid item 2</p></div>
                     <div class="c-dashboard__item u-x-span-6-bp3"><p>Grid item 3</p></div>
                     <div class="c-dashboard__item u-y-span-2-bp3 u-x-span-4-bp3"><p>Grid item 4</p></div>
-                    <div class="c-dashboard__item u-x-span-8-bp3"><p>Grid item 5</p><p>test</p></div>
-                    <div class="c-dashboard__item u-x-span-4-bp3"><p>Grid item 6</p><p>test</p></div>
+                    <div class="c-dashboard__item u-x-span-8-bp3">
+                        <p>Grid item 5</p>
+                        <p>test</p>
+                    </div>
+                    <div class="c-dashboard__item u-x-span-4-bp3">
+                        <p>Grid item 6</p>
+                        <p>test</p>
+                    </div>
                     <div class="c-dashboard__item u-x-span-4-bp3"><p>Grid item 7</p></div>
                     <div class="c-dashboard__item u-x-span-4-bp3"><p>Grid item 8</p></div>
                     <div class="c-dashboard__item u-x-span-8-bp3"><p>Grid item 9</p></div>
