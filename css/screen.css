@@ -99,7 +99,7 @@
 */
 
 html {
-    font-size: 15px;
+    font-size: 93.75%;
     line-height: 1.5;
     font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
     color: var(--color-neutral-xxx-dark);
@@ -162,19 +162,19 @@ h3 {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
     line-height: calc(var(--global-baseline) * 10);
     margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 2rem;
     line-height: calc(var(--global-baseline) * 8);
     margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 1.5rem;
     line-height: calc(var(--global-baseline) * 6);
     margin: 0 0 var(--global-whitespace-md);
 }
@@ -182,7 +182,7 @@ h3 {
 h4,
 h5,
 h6 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     line-height: calc(var(--global-baseline) * 5);
     margin: 0 0 var(--global-whitespace-md);
@@ -210,9 +210,9 @@ li ol {
 
 blockquote {
     font-style: normal;
-    font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 blockquote * {
@@ -222,16 +222,16 @@ blockquote * {
 
 figcaption {
     font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    margin-top: 8px;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin-top: var(--global-whitespace-sm);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 a {
@@ -277,7 +277,7 @@ input::placeholder {
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: var(--global-whitespace-md) var(--global-whitespace-md) 0;
 }
 
 /*
@@ -490,7 +490,7 @@ input::placeholder {
 }
 
 .c-topbar__options__separator {
-    width: 2px;
+    width: calc(var(--global-baseline) * 0.5);
     height: var(--global-whitespace-lg);
     background-color: var(--color-neutral-xx-light);
 }
@@ -571,7 +571,7 @@ input::placeholder {
             1fr staat voor de beschikbare ruimte
             1 FRACTION UNIT
         */
-        grid-template-columns: 260px 1fr;
+        grid-template-columns: 17.33rem 1fr;
         grid-template-rows: var(--c-app__topbar-height) 1fr;
         gap: 0;
     }
@@ -665,7 +665,7 @@ input::placeholder {
     color: var(--global-input-color);
     background-color: var(--global-input-backgroundColor);
     font-family: inherit;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: calc(var(--global-baseline) * 3);
     padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
     outline: none;
@@ -752,16 +752,16 @@ input::placeholder {
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
-    width: 10px;
-    height: 10px;
+    width: calc(var(--global-baseline) * 2);
+    height: calc(var(--global-baseline) * 2);
     fill: var(--global-color-alpha);
 }
 
 .c-custom-option__fake-input--radio .c-custom-option__symbol {
-    width: 6px;
-    height: 6px;
+    width: var(--global-baseline);
+    height: var(--global-baseline);
     background-color: var(--global-color-alpha);
-    border-radius: 3px;
+    border-radius: calc(var(--global-baseline) * 0.5);
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
@@ -776,8 +776,8 @@ input::placeholder {
 
     width: 100%;
 
-    --custom-toggle-width: 48px;
-    --custom-toggle-height: 24px;
+    --custom-toggle-width: var(--global-whitespace-xl);
+    --custom-toggle-height: var(--global-whitespace-md);
 
     --custom-toggle__symbol-offset: var(--global-whitespace-xs);
     --custom-toggle__symbol-size: calc(var(--custom-toggle-height) - var(--custom-toggle__symbol-offset));
@@ -928,7 +928,7 @@ input::placeholder {
 
 .c-label {
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 1rem;
     padding-bottom: var(--global-whitespace-xs);
     line-height: calc(var(--global-baseline) * 2);
     color: var(--global-page-secondaryTextColor);
@@ -947,7 +947,7 @@ input::placeholder {
   */
 
 .c-button {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: var(--global-borderRadius);
     border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
@@ -1042,23 +1042,23 @@ input::placeholder {
 }
 
 .u-mb-xs {
-    margin-bottom: 4px !important;
+    margin-bottom: var(--global-whitespace-xs) !important;
 }
 
 .u-mb-sm {
-    margin-bottom: 8px !important;
+    margin-bottom: var(--global-whitespace-sm) !important;
 }
 
 .u-mb-md {
-    margin-bottom: 16px !important;
+    margin-bottom: var(--global-whitespace-md) !important;
 }
 
 .u-mb-lg {
-    margin-bottom: 32px !important;
+    margin-bottom: var(--global-whitespace-lg) !important;
 }
 
 .u-mb-xl {
-    margin-bottom: 48px !important;
+    margin-bottom: var(--global-whitespace-xl) !important;
 }
 
 /*
@@ -1107,7 +1107,7 @@ input::placeholder {
 */
 
 .u-text-sm {
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 /*------------------------------------*\
