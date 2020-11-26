@@ -87,7 +87,7 @@
     /* transitions */
     --transition-alpha: 0.1s;
 
-    --pi: 3.14159265359
+    --pi: 3.14159265359;
 }
 
 /*------------------------------------*\
@@ -499,19 +499,41 @@ input::placeholder {
     background-color: var(--color-neutral-xx-light);
 }
 
+.c-topbar__options__user-container {
+    position: relative;
+    width: 100%;
+}
+
 .c-topbar__options__user {
     display: flex;
     align-items: center;
     gap: var(--global-whitespace-xs);
+
+    cursor: pointer;
 }
 
 .c-user__name {
     font-size: 1rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .c-user__dropdown-icon {
     display: flex;
     align-items: center;
+    transform-origin: center;
+    transition: transform var(--global-transitionTiming-alpha);
+}
+
+.c-user__dropdown-icon > .c-main-nav__icon {
+    margin: 0;
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 .c-user__avatar {
@@ -520,6 +542,71 @@ input::placeholder {
     border-radius: calc(var(--global-baseline) * 4);
     background-color: var(--color-neutral-xx-light);
 }
+
+.c-user-dropdown {
+    display: block;
+    position: absolute;
+    z-index: 100;
+
+    top: 110%;
+    left: 0;
+
+    background-color: var(--color-neutral-xxxx-light);
+    border-radius: calc(var(--global-baseline) * 1.5);
+    box-shadow: var(--global-shadow);
+
+    height: auto;
+    max-height: 0;
+
+    opacity: 0;
+    padding: 0;
+
+    overflow-y: hidden;
+    border: var(--global-borderWidth) solid var(--color-neutral-xx-light);
+
+    transition: all 0.1s ease;
+}
+
+/* :focus => when clicked. When clicking out of the label, focus will be gone and so will the dropdown menu */
+.c-user-dropdown__input:focus ~ .c-user-dropdown {
+    height: auto;
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.c-user-dropdown__input:focus + .c-topbar__options__user > .c-user__dropdown-icon {
+    transform: rotate(90deg);
+}
+
+.c-user-dropdown--force-show {
+    height: auto;
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.c-user-dropdown__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.c-user-dropdown__link {
+    display: block;
+    color: var(--color-neutral-xxx-dark);
+    text-decoration: none;
+
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg);
+    /* width: calc(100% + var(--global-baseline)); */
+}
+
+.c-user-dropdown__link:hover {
+    background-color: var(--color-neutral-xxx-light);
+}
+
+.c-user-dropdown__link:visited {
+    color: var(--color-neutral-xxx-dark);
+}
+
 
 /*
     Component: Main
@@ -664,7 +751,7 @@ input::placeholder {
 .c-custom-chart__circle--filled {
     --percent: 75;
     /* stroke is gecentreerd => /2 */
-    --omtrek: calc(calc(var(--r) - var(--stroke-width) / 2 ) * 2 * 3.141592);
+    --omtrek: calc(calc(var(--r) - var(--stroke-width) / 2) * 2 * 3.141592);
 
     --filled: calc(var(--percent) / 100 * var(--omtrek));
     --not-filled: calc(var(--omtrek) - var(--filled));

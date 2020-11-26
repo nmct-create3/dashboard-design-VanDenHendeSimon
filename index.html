@@ -83,10 +83,10 @@
             </div>
             <div class="c-app__topbar">
                 <p class="c-form-field c-topbar__search-container">
-                        <label class="c-label c-label--search" for="search">
-                            <svg class="c-main-nav__icon"><use xlink:href="#c-icon_search" /></svg>
-                        </label>
-                        <input class="c-input c-input--search" type="text" name="search" id="search" placeholder="Search transactions, invoices or help">                    
+                    <label class="c-label c-label--search" for="search">
+                        <svg class="c-main-nav__icon"><use xlink:href="#c-icon_search" /></svg>
+                    </label>
+                    <input class="c-input c-input--search" type="text" name="search" id="search" placeholder="Search transactions, invoices or help" />
                 </p>
                 <div class="c-topbar__options">
                     <div class="c-topbar__options__icons">
@@ -95,15 +95,29 @@
                         <svg class="c-main-nav__icon"><use xlink:href="#c-icon_chat" /></svg>
                         <svg class="c-main-nav__icon"><use xlink:href="#c-icon_notification" /></svg>
                     </div>
+
                     <div class="c-topbar__options__separator"></div>
-                    <div class="c-topbar__options__user">
-                        <!-- Dit allemaal ook een button doen, dus div.options__user is een button -->
-                        <div class="c-user__name">John Doe</div>
-                        <div class="c-user__dropdown-icon">
-                            <svg class="c-main-nav__icon"><use xlink:href="#c-icon_dropdown" /></svg>
+
+                    <div class="c-topbar__options__user-container">
+                        <input class="o-hide-accessible c-option--hidden c-user-dropdown__input" type="checkbox" id="user" />
+                        <label class="c-topbar__options__user" for="user">
+                            <div class="c-user__name">John Doe</div>
+                            <div class="c-user__dropdown-icon">
+                                <svg class="c-main-nav__icon"><use xlink:href="#c-icon_dropdown" /></svg>
+                            </div>
+                            <div class="c-user__avatar"></div>
+                        </label>
+                        <div class="c-user-dropdown">
+                            <ul class="c-user-dropdown__list">
+                                <li class="c-user-dropdown__list-item"><a href="#!" class="c-user-dropdown__link">Your profile</a></li>
+                                <li class="c-user-dropdown__list-item"><a href="#!" class="c-user-dropdown__link">Upgrade</a></li>
+                                <li class="c-user-dropdown__list-item"><a href="#!" class="c-user-dropdown__link">Help</a></li>
+                                <li class="c-user-dropdown__list-item"><a href="#!" class="c-user-dropdown__link">Settings</a></li>
+                                <li class="c-user-dropdown__list-item"><a href="#!" class="c-user-dropdown__link">Sign out</a></li>
+                            </ul>
                         </div>
-                        <div class="c-user__avatar"></div>
                     </div>
+
                 </div>
             </div>
             <div class="c-app__sidebar">
