@@ -652,17 +652,30 @@ input::placeholder {
 }
 
 .c-custom-chart__circle {
+    --r: 50px;
+    --stroke-width: 10px;
+
     transform-origin: center;
     stroke: var(--color-neutral-xx-light);
-    stroke-width: 4.2;
+    stroke-width: var(--stroke-width);
     fill: none;
 }
 
 .c-custom-chart__circle--filled {
-    --percent: 30;
+    --percent: 75;
+    /* stroke is gecentreerd => /2 */
+    --omtrek: calc(calc(var(--r) - var(--stroke-width) / 2 ) * 2 * 3.141592);
+
+    --filled: calc(var(--percent) / 100 * var(--omtrek));
+    --not-filled: calc(var(--omtrek) - var(--filled));
 
     stroke: var(--color-purple);
-    stroke-dasharray: var(--percent) calc(100 - var(--percent));
+    stroke-dasharray: var(--filled) var(--not-filled);
+    stroke-dashoffset: 0;
+
+    animation: chartanimation 1s ease 0 1;
+
+    /* transition: stroke-dashoffset 0.3s ease; */
     transform: rotate(-90deg);
 }
 
