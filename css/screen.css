@@ -477,6 +477,8 @@ input::placeholder {
 .c-topbar__search-container {
     display: flex;
     align-items: center;
+    margin: 0;
+    width: 50%;
 }
 
 .c-topbar__options {
@@ -699,6 +701,12 @@ input::placeholder {
     padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
     outline: none;
     transition: border var(--global-transition-timing-alpha);
+}
+
+.c-input--search {
+    border: none;
+    outline: none;
+    padding-left: var(--global-whitespace-sm);
 }
 
 .c-input:hover {
@@ -974,6 +982,10 @@ input::placeholder {
 
 .c-label--option {
     padding-bottom: 0;
+}
+
+.c-label--search {
+    padding: 0;
 }
 
 /*
