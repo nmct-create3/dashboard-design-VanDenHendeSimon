@@ -940,6 +940,7 @@ input::placeholder {
     top: 50%;
     right: var(--global-whitespace-sm);
 
+    transform-origin: center;
     transform: translateY(-50%);
 
     fill: var(--color-neutral-light);
@@ -948,6 +949,12 @@ input::placeholder {
 
     pointer-events: none;
 }
+
+/*
+.c-custom-select__input:focus + .c-custom-select__symbol {
+    transform: translateY(-50%) rotate(90deg);
+}
+*/
 
 /*
       Component: Label
