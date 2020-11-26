@@ -564,7 +564,7 @@ input::placeholder {
     overflow-y: hidden;
     border: var(--global-borderWidth) solid var(--color-neutral-xx-light);
 
-    transition: all 0.1s ease;
+    transition: all var(--global-transitionTiming-alpha);
 }
 
 /* :focus => when clicked. When clicking out of the label, focus will be gone and so will the dropdown menu */
@@ -572,6 +572,10 @@ input::placeholder {
     height: auto;
     max-height: 100vh;
     opacity: 1;
+}
+
+.c-user-dropdown__input:focus + .c-topbar__options__user {
+    pointer-events: none;
 }
 
 .c-user-dropdown__input:focus + .c-topbar__options__user > .c-user__dropdown-icon {
